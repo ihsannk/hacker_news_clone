@@ -1,0 +1,23 @@
+<div class="container">
+
+  <p><%= @post.post_title %></p>
+    <ul>
+      by <%= @post.user.username %> | <%= @post.created_at.strftime("%Y-%m-%d") %> | <%= @post.comments.count %> comments
+    </ul>
+  
+  <p><%= @post.post_text %></p>
+
+  <form action="/post/<%= @post.id %>" method="post">
+    <textarea rows="4"  name="comment_text">
+      </textarea>
+    <p><input type="submit" value="add comment">
+  </form>
+
+  <% @post.comments.each do |p|%>
+      <li>
+        <%= p.user.username %> | <%= @post.created_at.strftime("%Y-%m-%d") %>
+        <ul><%= p.comment_text %></ul>
+      </li>
+  <% end %>
+
+</div>
