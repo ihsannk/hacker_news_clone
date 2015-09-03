@@ -2,7 +2,7 @@
 
   <p><%= @post.post_title %></p>
     <ul>
-      by <%= @post.user.username %> | <%= @post.created_at.strftime("%Y-%m-%d") %> | <%= @post.comments.count %> comments
+      by <%= @post.user.username %> | <%= time_ago(@post.created_at) %> | <%= @post.comments.count %> comments
     </ul>
   
   <p><%= @post.post_text %></p>
@@ -15,7 +15,7 @@
 
   <% @post.comments.each do |p|%>
       <li>
-        <%= p.user.username %> | <%= @post.created_at.strftime("%Y-%m-%d") %>
+        <%= p.user.username %> | <%= time_ago(@post.created_at) %>
         <ul><%= p.comment_text %></ul>
       </li>
   <% end %>

@@ -1,0 +1,13 @@
+
+<div class="container">
+  
+
+  <% @comment.each do |c|%>
+   <p><%= c.user.username %> | <%= time_ago(c.created_at) %> | <%= c.post.post_title %> </p>
+   <p><%= c.comment_text %></p>
+   <% end %>
+
+
+
+  
+</div>

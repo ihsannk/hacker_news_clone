@@ -1,0 +1,12 @@
+<div class="container">
+  
+  <p>user: <%= @user.username %>
+  <p>created: <%= time_ago(@user.created_at) %>
+  <p>about: <%= @user.about %>
+  <p><a href="/user/<%= @user.id %>/submissions">submissions</a>
+  <p><a href="/user/<%= @user.id %>/comments">comments</a>
+
+
+</div>
+
+

@@ -1,11 +1,5 @@
 <div class="container">
-  <h1>Hacker News Clone</h1>
-  <% if session[:user] != nil %>
-   <a href="/submit"> submit </a> <%= @user %> |  <a href="/logout"> logout </a>
-  <% else %>
-    <a href="/login"> login / signup </a>
-  <% end %>
-
+  
   <ol>
     <%@post.each do |p| %>
     <p><li><a href="/post/<%= p.id %>"><%= p.post_title %></a> (<%= p.post_link %>)
@@ -14,9 +8,7 @@
       </ul>
       <% end %>
     </li> 
-    
   </ol>
 
 
-  
 </div>
